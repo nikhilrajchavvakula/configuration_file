@@ -1,0 +1,29 @@
+{
+  "VPC": {
+    "CIDRBlock": "10.0.0.0/16",
+    "Subnets": [
+      {
+        "CIDRBlock": "10.0.1.0/24",
+        "Type": "Private"
+      },
+      {
+        "CIDRBlock": "10.0.2.0/24",
+        "Type": "Public"
+      }
+    ]
+  },
+  "EC2Instances": [
+    {
+      "InstanceType": "t2.micro",
+      "SubnetType": "Private",
+      "KeyName": "my-key-pair",
+      "SecurityGroups": ["private-security-group"]
+    },
+    {
+      "InstanceType": "t2.micro",
+      "SubnetType": "Public",
+      "KeyName": "my-key-pair",
+      "SecurityGroups": ["public-security-group"]
+    }
+  ]
+}
